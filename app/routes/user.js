@@ -16,12 +16,10 @@ app.use(function(_req, res, next) {
     );
     next();
   });
-app.post('/join', cors(corsOptions),(req, res, next) => {
-    new UserService().join(req, res)
-    next()
+app.post('/join', cors(corsOptions),(req, res) => {
+    UserService().join(req, res)
 })
-app.post('/login', cors(corsOptions),(req, res, next) => {
-  new UserService().login(req, res)
-  next()
+app.post('/login', cors(corsOptions),(req, res) => {
+  UserService().login(req, res)
 })
 export default app
